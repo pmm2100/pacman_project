@@ -1,0 +1,414 @@
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+#game_menu{
+    background-image: url("../images/main.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100%;
+    transform-origin: center center;
+    overflow: hidden;
+    transform: scale(1);
+}
+#game-name, #error_h2{
+    position: fixed;
+    top: 2vh;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: yellow;
+    font-size: 12vw;
+    text-shadow: 0.1vw 0.2vw 0.4vw white;
+    margin: 0;
+    padding: 0;
+}
+
+#start{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 15vw;
+    height: 15vw;
+    background-image: url("../images/pacman_anim/pacmananim1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
+}
+#start:hover{
+    cursor: pointer;
+}
+
+* {
+    font-family: "Pixelify Sans", sans-serif;
+    box-sizing: border-box;
+}
+#register_box input, #login_box input{
+    background-color:rgba(255, 255, 255, 0.9) ;
+}
+#register_menu{
+    background-image: url("../images/background.png");
+    background-size:cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    transform-origin: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+#register-name {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    text-align: center;
+    color: #5a005a;
+    font-size: clamp(1.5rem, 5vw, 4rem);
+    margin: 0 0 1.5vw 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+#register_box {
+    border: 0.3vw solid rgb(90,0,90);
+    display: flex !important;
+    background-color: rgba(0,0,0,0.8) !important;
+    padding: 3vw;
+    box-shadow: 0 0.5vw 2vw rgba(0, 0, 0, 0.4);
+    height: auto !important;
+
+
+}
+
+#register_box form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vw;
+}
+
+#register_box input {
+    padding: 1vw;
+    font-size: 1.2vw;
+    border: 0.15vw solid rgb(90,0,90);
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    font-family: "Pixelify Sans", sans-serif;
+    transition: all 0.3s ease;
+}
+#register_box button {
+    padding: 1.2vw;
+    font-size: 1.5vw;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #5a005a;
+    border: 0.2vw solid #5a005a;
+    cursor: pointer;
+    font-family: "Pixelify Sans", sans-serif;
+    transition: all 0.3s ease;
+    text-shadow: 0.05vw 0.1vw 0.2vw rgba(0, 0, 0, 0.3);
+}
+
+#register_box button:hover {
+    background-color: rgba(90, 0, 90, 1);
+    color: black;
+    transform: scale(1.1);
+}
+
+#register_box button:active {
+    transform: scale(0.95);
+}
+
+#register_box{
+    display: none;
+    width: 40vw;
+    height: 70vh;
+    background-color: rgba(255,255,255,0.6);
+    flex-direction: column;
+    text-align: center;
+
+}
+#error_menu{
+    background-image: url("../images/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+#error_h2{
+    position: fixed;
+    top: 2vh;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: yellow;
+    font-size: 8vw;
+    text-shadow: 0.1vw 0.2vw 0.4vw white;
+    margin: 0;
+    padding: 0;
+}
+#error_info {
+    width: 80vw;
+    border: 0.3vw solid white;
+    border-radius: 2vw;
+    padding: 2vw;
+    position: fixed;
+    top: 40vh;
+    left: 10vw;
+    box-shadow: 0 0.5vw 2vw rgba(0, 0, 0, 0.4);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 0, 0.3));
+    color: #333;
+    font-size: 1.2vw;
+    font-family: Arial;
+    height: auto;
+    max-height: 40vh;
+    overflow-y: auto;
+
+
+}
+a{
+    text-decoration: none;
+    color: white;
+    font-weight: 1000;
+    font-size: 1vw;
+
+
+}
+a:hover{
+    text-decoration: underline;
+}
+#login_menu {
+    background-image: url("../images/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    transform-origin: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#login_box {
+    display: flex;
+    width: 40vw;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    flex-direction: column;
+    border: 0.3vw solid #5a005a;
+    padding: 3vw;
+}
+
+#login-name {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    text-align: center;
+    color: #5a005a;
+    font-size: clamp(1.5rem, 5vw, 4rem);
+    margin: 0 0 1.5vw 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+#login_box form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vw;
+}
+
+#login_box input {
+    padding: 1vw;
+    font-size: 1.2vw;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    font-family: "Pixelify Sans", sans-serif;
+    transition: all 0.3s ease;
+    border: 0.15vw solid rgb(90,0,90);
+}
+
+#login_box button {
+    padding: 1.2vw;
+    font-size: 1.5vw;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #5a005a;
+    border: 0.2vw solid #5a005a;
+    cursor: pointer;
+    font-family: "Pixelify Sans", sans-serif;
+    transition: all 0.3s ease;
+    text-shadow: 0.05vw 0.1vw 0.2vw rgba(0, 0, 0, 0.3);
+}
+#login_box button:hover {
+    background-color: rgba(90, 0, 90, 1);
+    box-shadow: 0 0.3vw 1vw rgba(90, 0, 90, 0.6);
+    outline: none;
+    color: black;
+    border-color: black;
+
+}
+#login_box a, #register_box a {
+    text-align: center;
+    display: block;
+    color: #333;
+    text-decoration: none;
+    font-size: 1vw;
+    margin-top: 1vw;
+    padding: 0.8vw;
+    border: 0.1vw solid #999;
+    background-color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+}
+
+#login_box a:hover, #register_box a:hover {
+    background-color: rgba(255, 255, 255, 1);
+    border-color: #5a005a;
+    color: #5a005a;
+}
+#main_menu{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url("../images/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#canvas{
+    margin-top: 3vw;
+    width: 38vw;
+    height: 42vw;
+    background-color: white;
+    image-rendering: pixelated;
+    background-image: url("../images/canva_background.png");
+    background-size:cover;
+    background-repeat: no-repeat;
+    border: 0.2vw solid rgb(33,33,255);
+
+}
+#user_data_info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: absolute;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border: 0.3vw solid rgb(90,0,90);
+    height: 11vh;
+    background-color: rgba(0,0,0,0.8);
+}
+#score, #highscore, #logged_username, #logout-but{
+    font-size: 3vw;
+    color: white;
+    font-family: "Pixelify Sans", sans-serif;
+}
+#logout-but{
+    width: 7vw;
+    height: 3vw;
+    font-size: 1vw;
+    color: white;
+    background-color: black;
+    border: 0.2vw solid rgb(90,0,90);
+}
+#logout-but:hover{
+    cursor: pointer;
+}
+#infobox{
+    height: 40vh;
+    width: 50vw;
+    background-color: rgba(0,0,0,0.7);
+    border: 0.2vw solid rgb(90,0,90);
+    z-index: 999;
+    position: absolute;
+    top: 32.5vh;
+    left: 25vw;
+    display: flex;
+    justify-content: center;
+    padding: 4vw;
+
+}
+#start_but{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 6vw;
+    height: 6vw;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 0.2vw solid rgba(90,0,90);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+#start_but::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: clamp(8px, 1.2vw, 14px) solid transparent;
+    border-bottom: clamp(8px, 1.2vw, 14px) solid transparent;
+    border-left: clamp(12px, 1.8vw, 22px) solid rgba(90,0,90,0.95);
+    transform: translateX(1px);
+}
+#info{
+    font-size: 4vw;
+    color: white;
+    font-family: "Pixelify Sans", sans-serif;
+
+}
+
+#login-info , #register-info{
+    width: 31vw;
+    height: 4vw;
+    background-color: rgb(237 131 131 / 0.8);
+    border: 0.2vw solid #ff5353;
+    margin: 1vw;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 1vw;
+
+}
+footer{
+    position: absolute;
+    color: #555555;
+    font-size: 0.8vw;
+    left: 45%;
+    top: 97%;
+}
+#error_menu{
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+#error_msg{
+    color: white;
+    font-size: 5vw;
+
+}
