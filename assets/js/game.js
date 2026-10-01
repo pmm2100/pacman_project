@@ -285,6 +285,8 @@ function start_game() {
         eatenImages: eatenImages,
         spawnOX: 13.5 * tile,
         spawnOY: 14.5 * tile,
+        eatenSpawnOX: 12.5 * tile,
+        eatenSpawnOY: 14.5 * tile,
         OX: 13.5 * tile,
         OY: 14.5 * tile,
         speed: tile,
@@ -299,6 +301,8 @@ function start_game() {
         eatenImages: eatenImages,
         spawnOX: 14.5 * tile,
         spawnOY: 14.5 * tile,
+        eatenSpawnOX: 13.5 * tile,
+        eatenSpawnOY: 14.5 * tile,
         OX: 14.5 * tile,
         OY: 14.5 * tile,
         speed: tile,
@@ -313,6 +317,8 @@ function start_game() {
         eatenImages: eatenImages,
         spawnOX: 15.5 * tile,
         spawnOY: 14.5 * tile,
+        eatenSpawnOX: 13.5 * tile,
+        eatenSpawnOY: 14.5 * tile,
         OX: 15.5 * tile,
         OY: 14.5 * tile,
         speed: tile,
@@ -325,6 +331,8 @@ function start_game() {
         name: "orange",
         images: orangeImages,
         eatenImages: eatenImages,
+        eatenSpawnOX: 13.5 * tile,
+        eatenSpawnOY: 14.5 * tile,
         spawnOX: 12.5 * tile,
         spawnOY: 14.5 * tile,
         OX: 12.5 * tile,
@@ -539,6 +547,7 @@ function start_game() {
                 }
                 else{
                     check_up_down(upper, down, home, object, Y, OY, speed);
+
                 }
             }
         }else if (checkY>checkX){
@@ -820,8 +829,8 @@ function start_game() {
         const gy = Math.floor(ghost.OY / tile);
 
         if (ghost.eaten) {
-            follow_player(ghost.spawnOX, ghost.spawnOY, ghost, gx, gy, ghost.speed, true);
-            if (Math.floor(ghost.OX) === Math.floor(ghost.spawnOX) && Math.floor(ghost.OY) === Math.floor(ghost.spawnOY)) {
+            follow_player(ghost.eatenSpawnOX, ghost.eatenSpawnOY, ghost, gx, gy, ghost.speed, true);
+            if (Math.floor(ghost.OX) === Math.floor(ghost.eatenSpawnOX) && Math.floor(ghost.OY) === Math.floor(ghost.eatenSpawnOY)) {
                 setTimeout(()=>{
                     ghost.eaten = false;
                     ghost.begin = true;
